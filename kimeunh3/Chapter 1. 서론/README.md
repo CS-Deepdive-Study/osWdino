@@ -6,6 +6,8 @@
 
 컴퓨터 시스템의 구성 요소
 
+![image](https://user-images.githubusercontent.com/59808674/163137606-d7181628-cdeb-4e7e-8531-8779223c0bd5.png)
+
 - 하드웨어(hardware)
   - 중앙처리장치(CPU), 메모리, 입출력(I/O)장치
 - 운영체제(operating system)
@@ -72,6 +74,8 @@
 
 다른 장치에 저장된 자료의 백업 사본을 저장하기 위해 특수 목적으로만 사용하기 때문에 매우 느리고 충분히 큰 장치를 **3차 저장장치(tertiary storage)** 라고 한다.
 
+![image](https://user-images.githubusercontent.com/59808674/163139106-9b60db90-308c-45bc-928a-fbb552dde2d1.png)
+
 다양한 저장장치 시스템 간의 주요 차이점은 속도(access time), 크기(storage capacity), 그리고 휘발성(volatility)에 있다
 
 ### 1.2.3 입출력 구조 (I/O Structure)
@@ -96,6 +100,8 @@
 일반적으로 멀티프로세서 시스템에는 각각 단일 코어 CPU가 있는 두 개 이상의 프로세서가 있다. 주요 장점은 처리량 증가이다. 즉 프로세서 수를 늘리면 더 적은 시간에 더 많은 작업을 수행할 수 있다. 하지만 N개의 프로세서를 사용한다고 N배만큼 빨라지는 것은 아니다.
 
 가장 일반적인 멀티프로세서 시스템은 **SMP(symmetric multiprocessing)** 을 사용한다.
+
+![image](https://user-images.githubusercontent.com/59808674/163140627-29a39b59-2bb7-4d05-a9e6-55fdd4351f79.png)
 
 - SMP: 각 피어 CPU 프로세서가 운영체제 기능과 사용자 프로세스를 포함한 모든 작업을 수행
 - 많은 프로세스를 동시에 실행할 수 있다는 장점을 가짐
@@ -140,7 +146,9 @@
 
 ### 1.4.2 이중모드와 다중모드 운용 (Dual-Mode and Multimode Operation)
 
-시스템을 올바르게 실행하기 위해 운영체제 코드 실행과 사용자 정의 코드 실행을 구분할 수 있어야 한다. 그를 위해 적어도 두 개의 독립된 연산 모드, 즉 사용자 모드(user mode)와 커널 모드(kernel mode)를 필요로 한다.
+시스템을 올바르게 실행하기 위해 운영체제 코드 실행과 사용자 정의 코드 실행을 구분할 수 있어야 한다. 그를 위해 적어도 두 개의 독립된 연산 모드, 즉 **사용자 모드(user mode)** 와 **커널 모드(kernel mode)** 를 필요로 한다.
+
+![image](https://user-images.githubusercontent.com/59808674/163140832-5c765c96-8681-42ef-8cee-c7d628ef0d4a.png)
 
 - 커널 모드는 수퍼바이저 모드(supervisor mode), 시스템 모드(system mode), 혹은 특권 모드(privileged mode) 로도 부른다.
 - 모드 비트(mode bit)로 현재 모드를 나타낸다
@@ -154,6 +162,8 @@
 - 그렇게 추상화된 개별 환경이 자신만의 컴퓨터에서 실행되고 있다는 환상을 만들어준다.
 
 가상머신(virtual machine)의 사용자는 단일운영체제에서 동시에 실행되는 프로세스들을 전환하는 방식과 동일한 방식으로 운영체제간의 전환을 할 수 있다.
+
+![image](https://user-images.githubusercontent.com/59808674/163141258-be8d5c56-b449-4c7e-8517-acf230b4acf9.png)
 
 가상머신 관리자(VMM - virtual machine manager)는 게스트(guest) 운영체제를 수행하고 그들의 자원이용을 관리하며 각 게스트를 서로로부터 보호한다.
 
