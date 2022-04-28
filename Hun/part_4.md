@@ -77,3 +77,63 @@ base, limit 레지스터를 이용하여 메모리를 보호
 2. 페이징
 
 프로세스의 논리 주소 공간을 비연속적인 공간으로 나누어 할당
+
+### 페이징
+
+프로세스의 물리 주소 공간이 연속되지 않아도 되는 메모리 관리 기법
+
+기본 방법 : 물리 메모리는 frame으로 나뉘어 진다
+
+논리 메모리는 page로 나뉘어 진다
+
+cpu에서 나오는 모든 주소는 p+d (page num + offset)
+
+페이지 번호는 page table에 접근 할 때 사용
+
+논리 주소 -> 물리 주소 과정
+
+1. p추출, page table의 인덱스로 사용
+2. page table에서 해당 frame 번호 f를 추출
+3. 논리 주소의 페이지 번호 p를 프레임 번호 f로 변환
+
+frame크기와 마찬가지로 page 크기는 HW가 결정 + paging 자체는 일종의 동적 배치
+
+물리 메모리 크기는 프로세스의 최대 논리적인 크기와 무관
+
+메모리에 대한 프로그래머의 인식과 실제 내용이 다르다는 것에 주의
+
+프레임 테이블 : 프레임이 비어있나, 사용중인가 등등 표시
+
+=> 페이징은 context switching 시간 증가시킴 각 프로세스의 page table 사본을 유지하기 때문이다, 논리주소 물리주소 mapping에 사용한다
+
+TLB, translation Look-Aside Buffer
+
+소형 HW 캐시, page를 캐싱하는 장치
+
+page에 있는 protection bits : 읽기/쓰기 전용인지, 유효/무효 한지 판단
+
+공유 페이지 : 공통의 코드 공유 가능
+
+page table의 구조
+
+계층적 paging
+
+1. 2단계 paging
+
+p1, p2를 이용해 page table mapping
+
+2. hash table
+
+hash(p) 이런식으로 그냥 hashing
+
+3. inverted page table
+
+pid를 통해 page를 찾을 수 있음
+
+시스템에 하나의 테이블만 존재
+
+스와핑
+
+메모리-백업장치 간의 이동
+
+page 단위로도 가능
